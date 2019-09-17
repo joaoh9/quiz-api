@@ -11,6 +11,7 @@ module.exports = {
         type: 'string',
       },
     },
+    required: ['pergunta', 'dificuldade'],
   },
   params: {
     type: 'object',

@@ -1,5 +1,6 @@
 'use strict';
 
+const fastifyCors = require('fastify-cors');
 const path = require('path');
 const AutoLoad = require('fastify-autoload');
 const helmet = require('fastify-helmet');
@@ -69,6 +70,8 @@ module.exports = async function(fastify, opts) {
     dir: path.join(__dirname, 'services'),
     options: { prefix: '/api' },
   });
+
+  fastify.register(fastifyCors);
 
   fastify.ready().then(() => {
     fastify.swagger();

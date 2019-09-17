@@ -26,7 +26,7 @@ module.exports = {
         description: 'possiveis respostas da pergunta',
       },
     },
-    required: ['pergunta'],
+    required: ['pergunta', 'opcoes'],
   },
   params: {
     type: 'object',

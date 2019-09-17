@@ -8,7 +8,7 @@ module.exports = async function(fastify) {
 
   fastify.delete(
     '/respostas/:respostaId',
-    schemaHelper.remove('Remove uma reposta cadastrada'),
+    schemaHelper.remove('Remove uma resposta cadastrada'),
     async function({ params: { respostaId } }) {
       try {
         return await core.resposta.remover(respostaId);

@@ -7,10 +7,12 @@ module.exports = async function(fastify) {
   const schemaHelper = fastify.schemaHelper(respostaSchema);
 
   fastify.get(
-    '/respostas/:respostaId',
-    schemaHelper.get('Retorna os detalhes de uma resposta cadastrada'),
-    async function({ params: { respostaId } }) {
-      const resposta = await core.resposta.recuperar(respostaId);
+    '/respostas/pergunta/:perguntaId',
+    schemaHelper.get(
+      'Retorna os detalhes de uma resposta cadastrada com o Id da pergunta que ela faz referência'
+    ),
+    async function({ params: { perguntaId } }) {
+      const resposta = await core.resposta.recuperarPelaPergunta(perguntaId);
 
       if (!resposta) {
         throw fastify.httpErrors.notFound();
