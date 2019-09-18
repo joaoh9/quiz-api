@@ -4,6 +4,6 @@ API for a Quiz application I'm currently building
 
 Not ready yet but the implementation is rather simple
 
-A questions class and a answers class.
+A questions class and a answers class with CRUD functionalities.
 
 This is currently a WIP for a greater project
